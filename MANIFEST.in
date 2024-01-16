@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include jetex *.css
+recursive-include jetex *.csv
+recursive-include jetex *.html
+recursive-include jetex *.ico
+recursive-include jetex *.js
+recursive-include jetex *.json
+recursive-include jetex *.md
+recursive-include jetex *.png
+recursive-include jetex *.py
+recursive-include jetex *.svg
+recursive-include jetex *.txt
+recursive-exclude jetex *.pyc
