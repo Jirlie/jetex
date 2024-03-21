@@ -6,7 +6,7 @@ app_publisher = "Mohammed Nasser"
 app_description = "Jetex Uniform Management"
 app_email = "nasser@nasserx.com"
 app_license = "MIT"
-
+app_logo_url = '/assets/jetex/jetex.png'
 # Includes in <head>
 # ------------------
 
@@ -38,12 +38,16 @@ app_license = "MIT"
 # ----------
 
 # application home page (will override Website Settings)
-# home_page = "login"
+home_page = "login"
 
+# website_redirects = [
+# 	{"source": r"/da(.*)", "target": r"/app/dashboard-view/Jetex\1"},
+# ]
 # website user home page (by Role)
 # role_home_page = {
-#	"Role": "home_page"
+# 	"System Manager": "/da"
 # }
+
 
 # Generators
 # ----------

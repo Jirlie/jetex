@@ -1,0 +1,101 @@
+{% extends "/templates/includes/base.html" %}
+{% block content %}
+{% block title %}
+      Laundry
+      {% endblock %}
+      <div id="layoutSidenav_content">
+        <!-- Start Laundary -->
+        <main>
+          <div class="laundary">
+            <div class="container px-4 mt-5">
+              <h1 class="text-center mb-5">Laundry</h1>
+              <div class="row">
+                <div class="col-12 mb-4 w-75 d-flex flex-column mb-5">
+                  <p class="mb-4" style="font-size: 1.4rem">Product Description</p>
+                  <div class="icons d-flex gap-4 flex-column">
+                    <div class="allul d-flex flex-column flex-lg-row gap-4">
+                      <ul class="d-flex gap-4">
+                        {% for items in item.items %}
+                        <div
+                          class="title d-flex flex-column gap-2 align-items-center justify-content-center"
+                        >
+                          <li class="rounded border" id="li-click">
+                            <img
+                              src="{{items.image}}"
+                              class="overflow-hidden"
+                              alt=""
+                            />
+                          </li>
+                          <div class="text d-flex flex-column align-items-center justify-content-center">
+                            <p id="lable-icon">{{ items.item_code}}</p>
+                            <form action="">
+                              <div class="row">
+                                <!-- <div class="col-lg-6 m-auto">
+                                  <select
+                                    style="width: unset;"
+                                    id="size-select"
+                                    class="form-select mt-2"
+                                    aria-label="Default select example"
+                                  >
+                                    <option value="XXS">XXS</option>
+                                    <option value="XS">XS</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="XXL">XXL</option>
+                                  </select>
+                                </div> -->
+                                <div class="col-lg-12 m-auto">
+                                  <select
+                                    style="width: unset;"
+                                    id="quantity"
+                                    class="form-select mt-2"
+                                    aria-label="Default select example"
+                                  >
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        {% endfor %}
+
+                      </ul>
+                  </div>
+                </div>
+                <div style="display: none;" class="col-lg-12 mb-4 wd">
+                  <input type="text" class="form-control m-auto" id="icons-input" />
+                </div>
+                <!-- <div class="form-outline mt-4 wd">
+                  <label class="form-label fs-5" for="textAreaExample6">Your Comment</label>
+                  <textarea class="form-control" id="comment" rows="5"></textarea>
+                </div> -->
+                <div class="col-12 mt-4">
+                  <button
+                    id="submit-btn"
+                    style="color: white; background-color: #ff4500"
+                    href="#"
+                    class="btn main-btn w-25"
+                    >Submit</button
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="/assets/jetex/js/main.js"></script>
+    {% endblock %}
+

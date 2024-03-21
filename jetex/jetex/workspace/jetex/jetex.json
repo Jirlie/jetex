@@ -1,0 +1,140 @@
+{
+ "charts": [
+  {
+   "chart_name": "Laundry",
+   "label": "Laundry"
+  },
+  {
+   "chart_name": "Damage Report",
+   "label": "Damage Report"
+  }
+ ],
+ "content": "[{\"id\":\"kXwHObR06S\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Jetex</span>\",\"col\":12}},{\"id\":\"43jwgbmEmd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Laundry\",\"col\":6}},{\"id\":\"9U1g2Mh4N5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee\",\"col\":6}},{\"id\":\"OX3b9AwtSQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Inventory\",\"col\":4}},{\"id\":\"01feZyvgwP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lost Item\",\"col\":4}},{\"id\":\"lshe_ko9Gq\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Damage Report\",\"col\":4}}]",
+ "creation": "2024-02-05 07:34:41.111655",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-review-points",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Jetex",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Uniform Management",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Laundry",
+   "link_count": 0,
+   "link_to": "Laundry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee",
+   "link_count": 0,
+   "link_to": "User",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Inventory",
+   "link_count": 0,
+   "link_to": "Inv",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Lost Item",
+   "link_count": 0,
+   "link_to": "Lost Item",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Damage Report",
+   "link_count": 0,
+   "link_to": "Damage Report",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Marketing",
+   "link_count": 0,
+   "link_to": "Marketing Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "House Keeping",
+   "link_count": 0,
+   "link_to": "House Keeping",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dashboard",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Manage Requests",
+   "link_count": 0,
+   "link_to": "dashboard-view",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-02-05 07:34:41.111655",
+ "modified_by": "Administrator",
+ "module": "Jetex",
+ "name": "Jetex",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "All"
+  }
+ ],
+ "sequence_id": 1.0,
+ "shortcuts": [],
+ "title": "Jetex"
+}

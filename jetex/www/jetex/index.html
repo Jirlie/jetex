@@ -1,0 +1,110 @@
+{% extends "/templates/includes/base.html" %} {% block content %}
+{% block title %}
+      Home
+      {% endblock %}
+<div id="layoutSidenav_content">
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Dashboard</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active-1">Dashboard</li>
+      </ol>
+      <div class="row">
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-warning text-white mb-4">
+            <div class="card-body">Pending Approval</div>
+            <div
+              class="card-footer d-flex align-items-center justify-content-between"
+            >
+              <a class="small text-white stretched-link" href="/pending"
+                >View Details</a
+              >
+              <div class="small text-white">
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-success text-white mb-4">
+            <div class="card-body">Confirmed Requests</div>
+            <div
+              class="card-footer d-flex align-items-center justify-content-between"
+            >
+              <a class="small text-white stretched-link" href="/approved"
+                >View Details</a
+              >
+              <div class="small text-white">
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-danger text-white mb-4">
+            <div class="card-body">Rejected Requests</div>
+            <div
+              class="card-footer d-flex align-items-center justify-content-between"
+            >
+              <a class="small text-white stretched-link" href="/rejected"
+                >View Details</a
+              >
+              <div class="small text-white">
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+          Ready For Collection
+        </div>
+        <div class="card-body">
+          <table id="datatablesSimple">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Date</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Status</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              {% for product in ready %}
+              
+              <tr>
+                <td> {{ product.creation.strftime('%Y-%m-%d') }}</td>
+                <td>
+                  {% for pro in product.product_details %}
+                  {{pro.product}}<br>
+                  {% endfor %}
+                </td>
+                <td>
+                  {% for pro in product.product_details %}
+                  
+                  {{pro.quantity}}<br>
+                  
+                  {% endfor %}
+                </td>
+                <td>Ready for Collection</td>
+              </tr>
+              
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+  {% endblock %}
+</div>

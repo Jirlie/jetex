@@ -1,0 +1,156 @@
+{% extends "/templates/includes/base.html" %}
+{% block content %}
+{% block title %}
+    Approved
+{% endblock %}
+<div id="layoutSidenav_content" class="d-flex flex-column">
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">Approved</h1>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1 text-black"></i>
+                    Approved Laundary
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                                
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            
+                            {% for product in laundry %}
+                            <tr>
+                                <td>{{ frappe.db.get_value("User", frappe.session.user, "full_name")}}</td>
+                                <td>
+                                    
+                                    {% for pro in product.product_details %}
+                                    {{ pro.product}}<br>
+                                    {% endfor %}
+                                    
+                                </td>
+                                <td>
+                                    
+                                    {% for pro in product.product_details %}
+                                    {{ pro.quantity}}<br>
+                                    {% endfor %}
+                                    
+                                </td>
+                                <td>Approved</td>
+                                
+                            </tr>
+                            {% endfor %}
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1 text-black"></i>
+                    Approved Lost Item
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimpleTwo">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for product in lost %}
+                            <tr>
+                                <td>{{ frappe.db.get_value("User", frappe.session.user, "full_name")}}</td>
+                                <td>
+                                    {% for pro in product.product_details %}
+                                    {{ pro.product}}<br>
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {% for pro in product.product_details %}
+                                    {{ pro.quantity}}<br>
+                                    {% endfor %}
+                                </td>
+                                <td>Approved</td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1 text-black"></i>
+                    Approved Damage Report
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimpleThree">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for product in damage %}
+                            <tr>
+                                <td>{{ frappe.db.get_value("User", frappe.session.user, "full_name")}}</td>
+                                <td>
+                                    {% for pro in product.product_details %}
+                                    {{ pro.product}}<br>
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {% for pro in product.product_details %}
+                                    {{ pro.quantity}}<br>
+                                    {% endfor %}
+                                </td>
+                                <td>Approved</td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+</div>
