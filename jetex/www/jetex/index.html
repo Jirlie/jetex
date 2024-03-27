@@ -1,7 +1,7 @@
 {% extends "/templates/includes/base.html" %} {% block content %}
 {% block title %}
-      Home
-      {% endblock %}
+Home
+{% endblock %}
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid px-4">
@@ -13,15 +13,11 @@
         <div class="col-xl-3 col-md-6">
           <div class="card bg-warning text-white mb-4">
             <div class="card-body">
-              Pending Approvals 
+              Pending Approvals
 
             </div>
-            <div
-              class="card-footer d-flex align-items-center justify-content-between"
-            >
-              <a class="small text-white stretched-link" href="/pending"
-                >View Details</a
-              >
+            <div class="card-footer d-flex align-items-center justify-content-between">
+              <a class="small text-white stretched-link" href="/pending">View Details</a>
               <div class="small text-white">
                 <i class="fas fa-angle-right"></i>
               </div>
@@ -31,12 +27,8 @@
         <div class="col-xl-3 col-md-6">
           <div class="card bg-success text-white mb-4">
             <div class="card-body">Confirmed Requests</div>
-            <div
-              class="card-footer d-flex align-items-center justify-content-between"
-            >
-              <a class="small text-white stretched-link" href="/approved"
-                >View Details</a
-              >
+            <div class="card-footer d-flex align-items-center justify-content-between">
+              <a class="small text-white stretched-link" href="/approved">View Details</a>
               <div class="small text-white">
                 <i class="fas fa-angle-right"></i>
               </div>
@@ -46,12 +38,8 @@
         <div class="col-xl-3 col-md-6">
           <div class="card bg-danger text-white mb-4">
             <div class="card-body">Rejected Requests</div>
-            <div
-              class="card-footer d-flex align-items-center justify-content-between"
-            >
-              <a class="small text-white stretched-link" href="/rejected"
-                >View Details</a
-              >
+            <div class="card-footer d-flex align-items-center justify-content-between">
+              <a class="small text-white stretched-link" href="/rejected">View Details</a>
               <div class="small text-white">
                 <i class="fas fa-angle-right"></i>
               </div>
@@ -84,7 +72,7 @@
             </tfoot>
             <tbody>
               {% for product in ready %}
-              
+
               <tr>
                 <td> {{ product.creation.strftime('%Y-%m-%d') }}</td>
                 <td>
@@ -94,14 +82,14 @@
                 </td>
                 <td>
                   {% for pro in product.product_details %}
-                  
+
                   {{pro.quantity}}<br>
-                  
+
                   {% endfor %}
                 </td>
                 <td>Ready for Collection</td>
               </tr>
-              
+
               {% endfor %}
             </tbody>
           </table>
