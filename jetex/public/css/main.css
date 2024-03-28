@@ -63,7 +63,7 @@ ul {
   background-color: var(--lighter-grey);
 }
 .sb-nav-link-icon svg {
-  color: black;
+  color: white;
   transition: 0.3s;
 }
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav {
