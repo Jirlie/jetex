@@ -11456,8 +11456,8 @@ body {
 .sb-sidenav .sb-sidenav-menu .nav .nav-link {
   display: flex;
   align-items: center;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
   position: relative;
   color: white;
 }
@@ -11481,7 +11481,7 @@ body {
   flex-direction: column;
 }
 .sb-sidenav .sb-sidenav-footer {
-  padding: 0.75rem;
+  padding: 0.15rem;
   flex-shrink: 0;
 }
 
