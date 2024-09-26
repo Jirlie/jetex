@@ -1,5 +1,5 @@
 :root {
-  --lighter-grey: #d4d0cb;
+  --lighter-grey: #635e5a;
   --bs-orange: #fd7e14;
 }
 
@@ -44,7 +44,7 @@ ul {
   color: var(--bs-orange);
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-sidenav-collapse-arrow svg {
-  color: black;
+  color: white;
   transition: 0.3s;
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link:hover .sb-nav-link-icon svg,
@@ -63,7 +63,7 @@ ul {
   background-color: var(--lighter-grey);
 }
 .sb-nav-link-icon svg {
-  color: black;
+  color: white;
   transition: 0.3s;
 }
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav {

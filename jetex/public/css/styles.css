@@ -11371,8 +11371,7 @@ body {
 }
 .sb-nav-fixed .sb-topnav {
   z-index: 1039;
-  background-color: #d4d0cb;
-  box-shadow: 0 0 10px #ddd;
+  background-color: #635e5a;
 }
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
   width: 225px;
@@ -11452,18 +11451,18 @@ body {
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: black;
+  color: white;
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link {
   display: flex;
   align-items: center;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
   position: relative;
-  color: black;
+  color: white;
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-sidenav-collapse-arrow {
   display: inline-block;
@@ -11482,7 +11481,7 @@ body {
   flex-direction: column;
 }
 .sb-sidenav .sb-sidenav-footer {
-  padding: 0.75rem;
+  padding: 0.15rem;
   flex-shrink: 0;
 }
 

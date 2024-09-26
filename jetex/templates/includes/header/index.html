@@ -1,75 +1,100 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Jetex - Dashboard</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
-      rel="stylesheet"
-    />
-    <link href="/assets/jetex/css/all.min.css" rel="stylesheet" />
-    <link href="/assets/jetex/css/styles.css" rel="stylesheet" />
-    <link href="/assets/jetex/css/main.css" rel="stylesheet" />
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    {% for include in include_css -%}
-		{{ include_style(include) }}
-		{%- endfor -%}
-  </head>
-  <body class="sb-nav-fixed">
-    <script>
-      window.frappe = {};
-      frappe.ready_events = [];
-      frappe.ready = function (fn) {
-          frappe.ready_events.push(fn);
-      }
-      window.dev_server = {{ dev_server }};
-      window.socketio_port = {{ (frappe.socketio_port or 'null') }};
-      window.show_language_picker = {{ show_language_picker or 'false' }};
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Jetex - Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+  <link href="/assets/jetex/css/all.min.css" rel="stylesheet" />
+  <link href="/assets/jetex/css/styles.css" rel="stylesheet" />
+  <link href="/assets/jetex/css/main.css" rel="stylesheet" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../../public/assets/img/favicon/favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="../../../public/assets/vendor/fonts/fontawesome.css" />
+  <link rel="stylesheet" href="../../../public/assets/vendor/fonts/tabler-icons.css" />
+  <link rel="stylesheet" href="../../../public/assets/vendor/fonts/flag-icons.css" />
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="../../../public/assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../../../public/assets/vendor/css/rtl/theme-default.css"
+    class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../../../public/assets/css/demo.css" />
+
+  <!-- Vendors CSS -->
+  <link rel="stylesheet" href="../../../public/assets/vendor/libs/node-waves/node-waves.css" />
+  <link rel="stylesheet" href="../../../public/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="../../../public/assets/vendor/libs/typeahead-js/typeahead.css" />
+  <link rel="stylesheet" href="../../../public/assets/vendor/libs/apex-charts/apex-charts.css" />
+  <link rel="stylesheet" href="../../../public/assets/vendor/libs/swiper/swiper.css" />
+  <link rel="stylesheet" href="../../../public/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+  <link rel="stylesheet"
+    href="../../../public/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+  <link rel="stylesheet"
+    href="../../../public/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="../../../public/assets/vendor/css/pages/cards-advance.css" />
+  <!-- Helpers -->
+  <script src="../../../public/assets/vendor/js/helpers.js"></script>
+  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+  <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+  <script src="../../../public/assets/vendor/js/template-customizer.js"></script>
+  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+  <script src="../../../public/assets/js/config.js"></script>
+
+
+  {% for include in include_css -%}
+  {{ include_style(include) }}
+  {%- endfor -%}
+</head>
+
+<body class="sb-nav-fixed">
+  <script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function (fn) {
+      frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 'null') }};
+    window.show_language_picker = {{ show_language_picker or 'false' }};
   </script>
   </head>
+
   <body>
     <script>
       frappe.boot = {{ boot }}
       // for backward compatibility of some libs
       frappe.sys_defaults = frappe.boot.sysdefaults;
-      </script>
-      {{ include_script('frappe-web.bundle.js') }}
-      
+    </script>
+    {{ include_script('frappe-web.bundle.js') }}
+
     <nav class="sb-topnav navbar navbar-expand navbar-dark">
       <!-- Navbar Brand-->
       <a class="navbar-brand ps-3" href="index.html">
         <img class="jetex" src="/assets/jetex/img_cor.png" alt="" />
       </a>
       <!-- Sidebar Toggle-->
-      <button
-        class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
-        id="sidebarToggle"
-        href="#!"
-      >
+      <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
         <i class="fas fa-bars"></i>
       </button>
       <!-- Navbar Search-->
-      <form
-        class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
-      >
+      <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
         <div class="input-group">
-          <input
-            class="form-control"
-            type="text"
-            placeholder="Search for..."
-            aria-label="Search for..."
-            aria-describedby="btnNavbarSearch"
-          />
+          <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+            aria-describedby="btnNavbarSearch" />
           <button class="btn btn-primary" id="btnNavbarSearch" type="button">
             <i class="fas fa-search"></i>
           </button>
@@ -78,20 +103,10 @@
       <!-- Navbar-->
       <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            id="navbarDropdown"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            ><i class="fas fa-user fa-fw"></i
-          ></a>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdown"
-          >
-            
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
             <li><a style="cursor: pointer;" class="dropdown-item" id="log-out">Logout</a></li>
           </ul>
         </li>
@@ -102,158 +117,107 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
           <div class="sb-sidenav-menu">
             <div class="nav">
-              <div class="sb-sidenav-menu-heading">Core</div>
               <a class="nav-link" href="index.html">
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-tachometer-alt"></i>
+                  <i class="fas fa-home-alt"></i>
                 </div>
                 Dashboard
               </a>
-              <div class="sb-sidenav-menu-heading">Interface</div>
+
+              <hr>
+
               <a class="nav-link collapsed" href="/laundry" aria-expanded="false">
-                <div class="sb-nav-link-icon"><svg class="svg-inline--fa fa-table-columns" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="table-columns" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 64V416H224V160H64zm384 0H288V416H448V160z"></path></svg><!-- <i class="fas fa-columns"></i> Font Awesome fontawesome.com --></div>
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-user-circle"></i>
+                </div>
                 Laundry
               </a>
-              
-              
-              
-              
-              <a
-                class="nav-link collapsed"
-                href="/damage-reports"
-                data-bs-target="#collapseLayouts"
-                aria-expanded="false"
-                aria-controls="collapseLayouts"
-              >
+              <hr>
+
+
+              <a class="nav-link collapsed" href="/damage-reports" data-bs-target="#collapseLayouts"
+                aria-expanded="false" aria-controls="collapseLayouts">
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-columns"></i>
+                  <i class="fas fa-chain-broken"></i>
                 </div>
                 Damage Reports
+
               </a>
-              <div
-                class="collapse"
-                id="collapseLayouts"
-                aria-labelledby="headingOne"
-                data-bs-parent="#sidenavAccordion"
-              ></div>
-              <a
-                class="nav-link collapsed"
-                href="/lost-item"
-                data-bs-target="#collapseLayouts"
-                aria-expanded="false"
-                aria-controls="collapseLayouts"
-              >
+              <hr>
+              <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion"></div>
+              <a class="nav-link collapsed" href="/lost-item" data-bs-target="#collapseLayouts" aria-expanded="false"
+                aria-controls="collapseLayouts">
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-columns"></i>
+                  <i class="fas fa-calendar"></i>
                 </div>
                 Lost Items
+
               </a>
-              <div
-                class="collapse"
-                id="collapseLayouts"
-                aria-labelledby="headingOne"
-                data-bs-parent="#sidenavAccordion"
-              ></div>
-              <a
-                class="nav-link collapsed"
-                href="/marketing"
-                aria-expanded="false"
-              >
+
+              <hr>
+
+              <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion"></div>
+              <a class="nav-link collapsed" href="/marketing" aria-expanded="false">
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-columns"></i>
+                  <i class="fas fa-bar-chart"></i>
                 </div>
                 Marketing Request
+
               </a>
-              <div
-                class="collapse"
-                id="collapseLayouts"
-                aria-labelledby="headingOne"
-                data-bs-parent="#sidenavAccordion"
-              ></div>
-              <a
-                class="nav-link collapsed"
-                href="/uni-form"
-                aria-expanded="false"
-              >
+              <hr>
+
+              <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion"></div>
+              <a class="nav-link collapsed" href="/uni-form" aria-expanded="false">
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-columns"></i>
+                  <i class="fas fa-certificate"></i>
                 </div>
                 Uniform Standard Manual
+
               </a>
-              <div
-                class="collapse"
-                id="collapseLayouts"
-                aria-labelledby="headingOne"
-                data-bs-parent="#sidenavAccordion"
-              ></div>
-              <a
-                class="nav-link collapsed"
-                href="/faq"
-                data-bs-target="#collapseLayouts"
-                aria-expanded="false"
-                aria-controls="collapseLayouts"
-              >
+              <hr>
+
+              <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                data-bs-parent="#sidenavAccordion"></div>
+              <a class="nav-link collapsed" href="/faq" data-bs-target="#collapseLayouts" aria-expanded="false"
+                aria-controls="collapseLayouts">
                 <div class="sb-nav-link-icon">
-                  <i class="fas fa-columns"></i>
+                  <i class="fas fa-question-circle-o"></i>
                 </div>
                 F A Q
+
               </a>
-              <div
-                class="collapse"
-                id="collapsePages"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#sidenavAccordion"
-              >
-                <nav
-                  class="sb-sidenav-menu-nested nav accordion"
-                  id="sidenavAccordionPages"
-                >
-                  <a
-                    class="nav-link collapsed"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#pagesCollapseAuth"
-                    aria-expanded="false"
-                    aria-controls="pagesCollapseAuth"
-                  >
+              <hr>
+
+              <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth"
+                    aria-expanded="false" aria-controls="pagesCollapseAuth">
                     Authentication
                     <div class="sb-sidenav-collapse-arrow">
                       <i class="fas fa-angle-down"></i>
                     </div>
                   </a>
-                  <div
-                    class="collapse"
-                    id="pagesCollapseAuth"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordionPages"
-                  >
+
+                  <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordionPages">
                     <nav class="sb-sidenav-menu-nested nav">
                       <a class="nav-link" href="login.html">Login</a>
                       <a class="nav-link" href="register.html">Register</a>
-                      <a class="nav-link" href="password.html"
-                        >Forgot Password</a
-                      >
+                      <a class="nav-link" href="password.html">Forgot Password</a>
                     </nav>
                   </div>
-                  <a
-                    class="nav-link collapsed"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#pagesCollapseError"
-                    aria-expanded="false"
-                    aria-controls="pagesCollapseError"
-                  >
+                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError"
+                    aria-expanded="false" aria-controls="pagesCollapseError">
                     Error
                     <div class="sb-sidenav-collapse-arrow">
                       <i class="fas fa-angle-down"></i>
                     </div>
                   </a>
-                  <div
-                    class="collapse"
-                    id="pagesCollapseError"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#sidenavAccordionPages"
-                  >
+                  <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordionPages">
                     <nav class="sb-sidenav-menu-nested nav">
                       <a class="nav-link" href="401.html">401 Page</a>
                       <a class="nav-link" href="404.html">404 Page</a>
